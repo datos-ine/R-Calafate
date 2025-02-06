@@ -1,21 +1,36 @@
 project:
   type: website
+  output-dir: docs
 
 website:
-  title: "R-Calafate"
-  navbar:
-    left:
+  title: "Introducción al lenguaje R aplicado a sistemas y servicios de salud"
+  back-to-top-navigation: true
+  sidebar: 
+    search: true
+    logo: images/logos_ine.svg
+    contents: 
       - href: index.qmd
-        text: Home
-      - about.qmd
-
+        text: Fundamentos
+      - unidad1.qmd
+      - unidad2.qmd
+      - unidad3.qmd
+      - unidad4.qmd
+      - unidad5.qmd
+      - unidad6.qmd
+      - unidad7.qmd
+      - unidad8.qmd      
+      
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
+    lang: es
     css: styles.css
     toc: true
+    toc-location: right
+    toc-title: "Contenidos"
+    search: true
+    author: 
+    - "Christian Ballejo"
 
 
 
