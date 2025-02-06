@@ -158,7 +158,7 @@ La salida completa de `skim()` separa los resultados por partes. Un resumen de d
 
 ## dlookr
 
-![](images/03/dlookr.PNG){fig-align="center" width=10%}
+![](images/03/dlookr.PNG){fig-align="center" width=20%}
 
 El paquete se define como una *"colección de herramientas que permiten el diagnóstico, la exploración y la transformación de datos"*. 
 
@@ -347,7 +347,7 @@ datos |>
 
 Encontramos dos observaciones que tienen los mismo valores en esta combinación de variables. Un hombre nacido el 29/06/1947 en la provincia de Tucumán, en el departamento Lules.
 
-Supongamos que no puede existir dos veces la misma persona en la tabla y que, además para confirmar esto tenemos alguna variable más segura como el DNI, por ejemplo.
+Supongamos que no puede existir dos veces la misma persona en la tabla (sería deseable confirmar esto teniendo alguna variable univoca cómo el DNI, por ejemplo), procederíamos a solucionar este duplicado.
 
 ### Eliminación de duplicados por observaciones únicas
 
@@ -366,7 +366,7 @@ datos |>
            .keep_all = T)
 ```
 
-Observamos que las 200 observaciones `distinct()` nos devuelve 199. Eliminó una de las dos que tenían duplicadas esa serie de variables definidas, pero no podemos controlar cuál de ellas elimina.
+Observamos que las 200 observaciones `distinct()` nos devuelve 199. Eliminó una de las dos que tenían duplicadas esa serie de variables definidas (no podemos controlar cuál de ellas elimina).
 
 ### Eliminación de duplicados por recorte de observaciones
 
@@ -490,7 +490,7 @@ plot_na_pareto(datos,
 
 ## Gestión de NA's con naniar
 
-![](images/03/naniar.PNG){fig-align="center" width=10%}
+![](images/03/naniar.PNG){fig-align="center" width=15%}
 
 El paquete **naniar** es un paquete que reúne funciones diseñadas para el manejo de valores faltantes pensado para una gestión completa.
 

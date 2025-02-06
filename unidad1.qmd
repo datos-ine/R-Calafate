@@ -208,7 +208,7 @@ Si escribimos mal la función...
 ```{r, eval=FALSE}
 REP(x =3, times = 4)
 
-Error in REP(x = 3, times = 4) : no se pudo encontrar la función "rop"
+Error in REP(x = 3, times = 4) : no se pudo encontrar la función "REP"
 ```
 Esta última posibilidad es similar a un "objeto no encontrado" por **error de sintaxis**.
 
@@ -286,7 +286,7 @@ datos:
 -   chacacter (cadena de caracteres)
 -   logical (lógicos o booleanos -- toman valores por si o no)
 
-```{r,echo=F,  fig.align='center', out.width = "80%"}
+```{r,echo=F,  fig.align='center'}
 knitr::include_graphics("images/01/tipo_datos.JPG")
 ```
 
@@ -787,13 +787,13 @@ Siendo **open source** cualquier persona puede construir paquetes con nuevas fun
 
 Un grupo de paquetes conforman el sistema base que quedan activos cuando instalamos el software R.
 
-Otros paquetes se encuentran publicados en el repositorio para ser descargados cuando sea necesario. Actualmente existen más de 19000 paquetes para múltiples aplicaciones.
+Otros paquetes se encuentran publicados en el repositorio para ser descargados cuando sea necesario. Actualmente existen más de 22000 paquetes para múltiples aplicaciones.
 
 Existen dos formas de descargar estos paquetes, directamente desde RStudio/R y por medio del sitio web, descargándolos como archivos comprimidos .zip
 
 Si el equipo se encuentra conectado a Internet es más cómodo realizar las descargas desde RStudio, pero en el caso de no tener acceso permanente a la red, se pueden descargar desde la web en otro equipo y luego guardar en el equipo donde tenemos el programa R.
 
-El sitio web para las descargas de los paquetes publicados es https://cran.r-project.org/web/packages/
+El sitio web para las descargas de los paquetes publicados es <https://cran.r-project.org/web/packages/>
 
 Allí se encuentran los enlaces para ver el listado de paquetes ordenados alfabéticamente o por fecha de publicación.
 
@@ -829,7 +829,7 @@ Hay una forma de asegurarnos cuando instalamos un paquete que a su vez se instal
 
 El lenguaje nos permite importar variados formatos de tablas de datos utilizando funciones propias de R base como de paquetes que se dedican a esta tarea.
 
-El formato nativo de tablas de datos de R es el texto plano (*ASCII* - Codigo Estadounidense Estandar para el Intercambio de Informacion) con sus columnas separadas por algún caracter. Estos pueden ser caracteres habituales como la coma (,) o el punto y coma (;) que da lugar a la extensión **\*.csv**, o algunos especiales como la barra vertical (\|) que suele utilizar el INDEC para sus productos o bien cualquier otro, como espacios o la tabulación.
+El formato nativo de tablas de datos de R es el texto plano (UTF-8) con sus columnas separadas por algún caracter. Estos pueden ser caracteres habituales como la coma (,) o el punto y coma (;) que da lugar a la extensión **\*.csv**, o algunos especiales como la barra vertical (\|) que suele utilizar el INDEC para sus productos o bien cualquier otro, como espacios o la tabulación.
 
 Otra característica que tienen estos archivos es que generalmente poseen una cabecera donde se ubican los nombres de cada columna/variable y por supuesto que cada una de ellas debe respetar un mismo tipo de dato para cumplir con la condición que la hace una tabla/base de datos.
 

@@ -440,7 +440,7 @@ window.Quarto = {
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">REP</span>(<span class="at">x =</span><span class="dv">3</span>, <span class="at">times =</span> <span class="dv">4</span>)</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">REP</span>(<span class="at">x =</span> <span class="dv">3</span>, <span class="at">times =</span> <span class="dv">4</span>) <span class="sc">:</span> no se pudo encontrar la función <span class="st">"rop"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>Error <span class="cf">in</span> <span class="fu">REP</span>(<span class="at">x =</span> <span class="dv">3</span>, <span class="at">times =</span> <span class="dv">4</span>) <span class="sc">:</span> no se pudo encontrar la función <span class="st">"REP"</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Esta última posibilidad es similar a un “objeto no encontrado” por <strong>error de sintaxis</strong>.</p>
 <p>Los mensajes de error en general y sobre todo al principio pueden parecer extraños y difíciles de entender, pero con un poco de práctica podemos inferir donde está el problema.</p>
@@ -512,7 +512,7 @@ window.Quarto = {
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/01/tipo_datos.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+<p><img src="images/01/tipo_datos.JPG" class="img-fluid quarto-figure quarto-figure-center figure-img" width="615"></p>
 </figure>
 </div>
 </div>
@@ -1077,10 +1077,10 @@ window.Quarto = {
 <p>R consta de un sistema base y de librerías adicionales, llamados paquetes (packages) que extienden su funcionalidad.</p>
 <p>Siendo <strong>open source</strong> cualquier persona puede construir paquetes con nuevas funciones, aunque no todos se publican en el repositorio CRAN (Comprehensive R Archive Network).</p>
 <p>Un grupo de paquetes conforman el sistema base que quedan activos cuando instalamos el software R.</p>
-<p>Otros paquetes se encuentran publicados en el repositorio para ser descargados cuando sea necesario. Actualmente existen más de 19000 paquetes para múltiples aplicaciones.</p>
+<p>Otros paquetes se encuentran publicados en el repositorio para ser descargados cuando sea necesario. Actualmente existen más de 22000 paquetes para múltiples aplicaciones.</p>
 <p>Existen dos formas de descargar estos paquetes, directamente desde RStudio/R y por medio del sitio web, descargándolos como archivos comprimidos .zip</p>
 <p>Si el equipo se encuentra conectado a Internet es más cómodo realizar las descargas desde RStudio, pero en el caso de no tener acceso permanente a la red, se pueden descargar desde la web en otro equipo y luego guardar en el equipo donde tenemos el programa R.</p>
-<p>El sitio web para las descargas de los paquetes publicados es https://cran.r-project.org/web/packages/</p>
+<p>El sitio web para las descargas de los paquetes publicados es <a href="https://cran.r-project.org/web/packages/" class="uri">https://cran.r-project.org/web/packages/</a></p>
 <p>Allí se encuentran los enlaces para ver el listado de paquetes ordenados alfabéticamente o por fecha de publicación.</p>
 <p>Una vez que ingresamos al link del paquete que nos interesa veremos en la página algunos datos relacionados como un breve texto de que trata el paquete, el numero de versión, la fecha de publicación, el autor, el archivo de documentación, y por supuesto los archivos a descargar para cada sistema operativo.</p>
 <p>Afortunadamente en la actualidad la mayoría de las computadoras cuentan con acceso a Internet por lo cual explicaremos como se puede descargar, instalar y activar los paquetes desde RStudio.</p>
@@ -1116,7 +1116,7 @@ window.Quarto = {
 <section id="lectura-de-archivos-de-datos" class="level2">
 <h2 class="anchored" data-anchor-id="lectura-de-archivos-de-datos">Lectura de archivos de datos</h2>
 <p>El lenguaje nos permite importar variados formatos de tablas de datos utilizando funciones propias de R base como de paquetes que se dedican a esta tarea.</p>
-<p>El formato nativo de tablas de datos de R es el texto plano (<em>ASCII</em> - Codigo Estadounidense Estandar para el Intercambio de Informacion) con sus columnas separadas por algún caracter. Estos pueden ser caracteres habituales como la coma (,) o el punto y coma (;) que da lugar a la extensión <strong>*.csv</strong>, o algunos especiales como la barra vertical (|) que suele utilizar el INDEC para sus productos o bien cualquier otro, como espacios o la tabulación.</p>
+<p>El formato nativo de tablas de datos de R es el texto plano (UTF-8) con sus columnas separadas por algún caracter. Estos pueden ser caracteres habituales como la coma (,) o el punto y coma (;) que da lugar a la extensión <strong>*.csv</strong>, o algunos especiales como la barra vertical (|) que suele utilizar el INDEC para sus productos o bien cualquier otro, como espacios o la tabulación.</p>
 <p>Otra característica que tienen estos archivos es que generalmente poseen una cabecera donde se ubican los nombres de cada columna/variable y por supuesto que cada una de ellas debe respetar un mismo tipo de dato para cumplir con la condición que la hace una tabla/base de datos.</p>
 <p>Lo más importante para hacer una buena lectura de la tabla de datos con la que deseamos trabajar es conocer previamente el formato que tiene, si tiene cabecera, que caracter usa como separador de columnas, etc. Al ser un texto plano se puede abrir desde un simple <strong>Block de Notas</strong> de Windows o desde el mismo <strong>RStudio</strong> para conocer sus particularidades.</p>
 <p>Actualmente y dentro del ecosistema con el que vamos a trabajar durante este curso hay un paquete con funciones diseñadas para importar estos tipos de archivos. Se llama <strong>readr</strong> y su fuerte es detectar el formato que tiene cada columna en el momento de la lectura.</p>

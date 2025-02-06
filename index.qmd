@@ -104,7 +104,7 @@ Se espera que al finalizar este curso los participantes puedan:
 
 **6. Contenidos**
 
-Unidad 1: Instalación e introducción al lenguaje R
+**Unidad 1: Instalación e introducción al lenguaje R**
 
 1.1 Descarga e instalación de R, Rtools y RStudio
 
@@ -122,33 +122,32 @@ del lenguaje. Buenas prácticas
 
 1.5 Lectura de datos. Texto plano, Excel y otros formatos específicos. 
 
-Unidad 2: Exploración, diagnóstico y limpieza de datos 
+**Unidad 2: Procesamiento de datos**
 
-2.1 Estructura de datos. Valores perdidos (NA) 
+2.1	Gestión de datos con tidyverse. Paquete dplyr.
 
-2.2 Exploración y diagnóstico con paquetes skimr y dlookr 
+2.2	Uniones de tablas de datos. Familia de join’s y bind’s
 
-2.3 Manejo de duplicados. Limpieza de datos 
+2.3	Datos “tidy” y “no-tidy”. Pivoteos. Paquete tidyr.
 
-2.4 Diagnóstico de valores perdidos. Paquete naniar 
 
-2.5 Exportación de datos limpios en diferentes formatos. 
+**Unidad 3: Exploración, diagnóstico y limpieza de datos**
 
-Unidad 3: Procesamiento de datos 
+3.1	Exploración de tipos de datos y diagnóstico con paquetes skimr y dlookr
 
-3.1 Gestión de datos con tidyverse. Paquete dplyr. 
+3.2	Manejo de duplicados. Limpieza de datos
 
-3.2 Uniones de tablas de datos. Familia de join’s y bind’s 
+3.3	Diagnóstico de valores perdidos (NA). Paquete naniar
 
-3.3 Datos “tidy” y “no-tidy”. Pivoteos. Paquete tidyr. 
+3.4	Exportación de datos limpios en diferentes formatos.
 
-Unidad 4: Tratamiento de datos específicos 
+**Unidad 4: Tratamiento de datos específicos** 
 
 4.1 Variables de tiempo. Librería Lubridate. 
 
 4.2 Cadenas de caracteres y factores. Paquete stringr y forcats 
 
-Unidad 5: Estadística descriptiva 
+**Unidad 5: Estadísticos, operaciones múltiples y resúmenes**
 
 5.1 Cálculos: Proporciones, razones y tasas.
 
@@ -158,7 +157,7 @@ Unidad 5: Estadística descriptiva
 
 5.4 Paquete rstatix y gtsummary. 
 
-Unidad 6: Visualización de datos 
+**Unidad 6: Visualización de datos** 
 
 6.1 Gramática de gráficos con ggplot2. Gráficos estadísticos. 
 
@@ -168,13 +167,13 @@ Unidad 6: Visualización de datos
     
 6.4 Exportación en diferentes formatos (raster y vectorial) 
 
-Unidad 7: Control de flujo y funciones 
+**Unidad 7: Control de flujo y funciones** 
 
 7.1 Bucles y condicionales
 
 7.2 Creación de funciones 
 
-Unidad 8: Comunicar con RStudio 
+**Unidad 8: Comunicar con Quarto**
 
 8.1 Quarto. Paquete tinytext. 
 
