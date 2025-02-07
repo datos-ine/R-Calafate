@@ -802,7 +802,7 @@ datos <- datos |>
 levels(datos$Enfermedad)
 ```
 
-La función del paquete **forcats** para realizar la misma tarea se llama `as_factor()`. No agrega ningun funcionalidad extra por lo que es indistinto utilizar una forma u otra.
+La función del paquete **forcats** para realizar la misma tarea se llama `as_factor()`. No agrega ninguna funcionalidad extra por lo que es indistinto utilizar una forma u otra.
 
 Aquí la utilizamos para convertir la variable *Sexo*
 
@@ -830,12 +830,12 @@ datos <- datos |>
 levels(datos$Sexo)
 
 datos |> 
-  reframe(fct_count(Sexo))
+  count(Sexo)
 ```
 
 Vemos en los argumentos que le indicamos que "Masculino" es igual a Varon y "Femenino" igual a Mujer. Esto provoca que en todos los casos donde aparezca "Masculino" sea reemplazado por Varon y cuando aparezcan "Femenino" se cambie por Mujer.
 
-Finalmente verificamos que los niveles sean los dos que necesitamos y además podemos producir un listado de frecuencias de los niveles del factor con `fct_count()` dentro de un `reframe()` que es la opción correcta al `summarise()` cuando el resultado es mayor a una fila a partir de la versión 1.1.0 de **dplyr**.
+Finalmente verificamos que los niveles sean los dos que necesitamos y además podemos producir un listado de frecuencias de los niveles del factor con `count()`. 
 
 Hasta aquí tenemos las dos primeras variables convertidas y podrían ser utilizadas en un análisis posterior para construir una tabla de contingencia de Sexo vs Enfermedad.
 
@@ -886,7 +886,7 @@ Aparecen 4 niveles para la variable. Para ver la frecuencia de aparición hacemo
 
 ```{r}
 datos |> 
-  reframe(fct_count(Civil))
+  count(Civil)
 ```
 
 En la frecuencia aparecen los 4 niveles más un valor faltante (NA). Estos valores habitualmente se omiten en muchas de las operaciones que realiza el lenguaje.
@@ -901,7 +901,7 @@ datos <- datos |>
                                        level = "Desconocido"))
 
 datos |> 
-  reframe(fct_count(Civil))
+  count(Civil)
 
 levels(datos$Civil)
 ```

@@ -26,6 +26,22 @@ pacman::p_load(
 
 Con las herramientas conocidas hasta el momento sabemos obtener resúmenes estadísticos de variables cuantitativas usando a `summarise()` y estratificados a partir de `group_by()` o el argumento `by =` de  `summarise()`.
 
+Dentro de este andamiaje que produce `summarise()` se aplican las funciones estadísticas conocidas de lenguaje como:
+
+-   `min()` mínimo
+-   `max()` máximo
+-   `mean()` media
+-   `median()` mediana
+-   `var()` varianza
+-   `sd()` desvío
+-   `sum()` sumatoria
+-   `first()` primer valor en el vector
+-   `last()` último valor en el vector
+-   `n()` número de valores en el vector
+-   `n_distinct()` números de valores distintos en el vector
+
+Y tantas otras provenientes de paquetes específicos como construidas (propias).
+
 Estas tareas, ya sea transformando u obteniendo resultados resumenes de variables, las aplicamos variable a variable, es decir repitiendo las operaciones para cada una de las columnas de una tabla.
 
 Una premisa del tidyverse, y también de la programación en general, es no copiar y pegar el código mas de dos veces. Si bien esta práctica ahorra tiempo y no esta mal en si mismo, hacerlo suele ser una fuente de errores y además incrementa las líneas de código del script.
@@ -585,7 +601,7 @@ Hace unos años a un desarrollador se le ocurrió crear un paquete que contiene 
 
 El paquete se llama **rstatix** y provee un marco simple e intuitivo compatible con el uso de tuberías, coherente con la filosofía de diseño "tidyverse", para realizar pruebas estadísticas descriptivas básicas y otras más avanzadas de inferencia y modelado.
 
-Las funciones relacionadas con la inferencia estadística, como t-test, ANOVAS, correlaciones y tamaños de efecto, así como también valores p ajustados o agregados de etiquetas de significación no serán explicados en este curso pero aquellxs estudiantes que les interese profundizar y utilizarlas le pueden sacar un provecho muy útil a este paquete, cuyo sitio es <https://rpkgs.datanovia.com/rstatix/index.html>.
+Las funciones de inferencia estadística, para comparar medias y proporciones (métodos paramétricos y no paramétricos), ANOVAS, analisis post-hoc, correlaciones y tamaños de efecto, así como también valores p ajustados o agregados de etiquetas de significación no serán explicados en este curso pero aquellxs que les interese profundizar y utilizarlas le pueden sacar un provecho muy útil a este paquete, cuyo sitio es <https://rpkgs.datanovia.com/rstatix/index.html>.
 
 Respecto del ejemplo anterior la función de **rstatix** que reemplaza al `t.test()` tradicional es `t_test()`, es decir que al modo tidyverse reemplaza en el nombre el punto por un guión bajo (sucede en todas las funciones del paquete). 
 
@@ -717,7 +733,7 @@ Integra estimaciones estadísticas predefinidas y se pueden personalizar a gusto
 
 En el sitio del desarrollador [(gtsummary)](https://www.danieldsjoberg.com/gtsummary/), encontrarán mucha documentación para adecuar los requerimientos de la salida buscada.
 
-Mostramos un ejemplo en función de los datos del archivo "base2023r.xlsx". 
+Mostramos un ejemplo en función de unos datos de prueba. 
 
 ```{r}
 #| message: false
@@ -778,6 +794,8 @@ tabla1 <- datos |>
   as_flex_table() |> 
   autofit() |>    # ajuste automático 
   theme_box()     # tema box
+
+tabla1
 ```
 
 Luego es posible exportar fácilmente una o más tablas a partir de los objetos flextables almacenados a documentos tipo html, RTF, Word, PowerPoint o PNG.
