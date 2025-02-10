@@ -459,7 +459,7 @@ Existen varias técnicas para su construcción. La más común es utilizar cuart
 
 De esta forma, se pueden detectar brotes cuando los casos actuales superan las zonas de alerta y/o epidemia.
 
-Otra manera de construir estos corredores es por medio de la media geométrica. Método publicado por Marcelo Bortman [ver publicación](https://www.scielosp.org/article/rpsp/1999.v5n1/1-8).
+Otra manera de construir estos corredores es por medio de la media geométrica. Método publicado por Marcelo Bortman [ver publicación](https://www.scielosp.org/pdf/rpsp/1999.v5n1/1-8/es).
 
 Consiste en calcular la media geométrica de las tasas y sus intervalos de confianza (mayor solidez estadística).
 

@@ -721,7 +721,7 @@ Habrá que tener en cuenta que las magnitudes de escala de ambas capas sean cons
 <li>Zona de epidemia: Por encima del percentil 90.</li>
 </ul>
 <p>De esta forma, se pueden detectar brotes cuando los casos actuales superan las zonas de alerta y/o epidemia.</p>
-<p>Otra manera de construir estos corredores es por medio de la media geométrica. Método publicado por Marcelo Bortman <a href="https://www.scielosp.org/article/rpsp/1999.v5n1/1-8">ver publicación</a>.</p>
+<p>Otra manera de construir estos corredores es por medio de la media geométrica. Método publicado por Marcelo Bortman <a href="https://www.scielosp.org/pdf/rpsp/1999.v5n1/1-8/es">ver publicación</a>.</p>
 <p>Consiste en calcular la media geométrica de las tasas y sus intervalos de confianza (mayor solidez estadística).</p>
 <p>La media geométrica la calculamos haciendo el logaritmo de la tasa para cada año, luego se calcula la media y los intervalos de confianza, y finalmente se hace el antilogaritmo</p>
 <p>Una limitación del método es que los valores deben ser siempre mayores de 0, ya que no es posible calcular el logaritmo de 0 ni de números negativos. Para sortear ese escollo, Betty Kirkwood recomienda sumarles 1 a todos los valores originales, realizar los cálculos y, finalmente, restar 1 a los valores finales.</p>
