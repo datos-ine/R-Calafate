@@ -376,23 +376,23 @@ El valor de i es: 5 </code></pre>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>datos</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 5
-   grupo      a       b      c       d
-   &lt;chr&gt;  &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
- 1 A      0.520  0.502   0.159 -0.229 
- 2 B     -0.453  0.0787  2.17  -0.276 
- 3 B      0.610  1.09   -1.23  -0.424 
- 4 B     -1.45   0.455   0.484  0.0992
- 5 A      1.66   0.476   0.749  0.318 
- 6 B     -0.258  1.52    0.458  0.579 
- 7 B      1.09  -0.743  -0.664  1.22  
- 8 A     -0.724  0.152  -1.78  -0.176 
- 9 B     -0.873  1.77   -1.46   0.230 
-10 B      0.848 -0.856  -0.414  0.405 </code></pre>
+   grupo       a      b      c       d
+   &lt;chr&gt;   &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+ 1 B      0.879   0.609 -0.919  0.517 
+ 2 B     -0.829   0.854 -2.09  -0.0327
+ 3 B      0.741  -1.74  -1.02  -1.91  
+ 4 A     -0.327   0.231  1.07  -0.220 
+ 5 B      0.280   0.293  1.94   0.368 
+ 6 B     -1.30    1.35  -2.05  -0.0984
+ 7 A     -1.79    0.249  0.335  1.68  
+ 8 B     -0.887   0.768 -0.882  0.146 
+ 9 B     -0.356   0.778 -0.185 -0.408 
+10 A      0.0492  1.20  -0.800 -2.13  </code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="at">.x =</span> datos, <span class="at">.f =</span> mean)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>      grupo           a           b           c           d 
-         NA  0.09684586  0.44403309 -0.15255168  0.17420890 </code></pre>
+<pre><code>     grupo          a          b          c          d 
+        NA -0.3543281  0.4590875 -0.4598775 -0.2091794 </code></pre>
 </div>
 </div>
 <p>Calcula la media por cada una de las variables numéricas. Como la variable grupo no lo es me devuelve una advertencia y un NA como resultado.</p>
@@ -401,8 +401,8 @@ El valor de i es: 5 </code></pre>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">map_dbl</span>(<span class="at">.x =</span> datos <span class="sc">|&gt;</span> <span class="fu">select</span>(<span class="sc">-</span>grupo), </span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">.f =</span> mean)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>          a           b           c           d 
- 0.09684586  0.44403309 -0.15255168  0.17420890 </code></pre>
+<pre><code>         a          b          c          d 
+-0.3543281  0.4590875 -0.4598775 -0.2091794 </code></pre>
 </div>
 </div>
 <p>Observen que dentro del argumento <code>.x</code> construimos una estructura con tuberías donde seleccionamos a todas las variables menos a <strong>grupo</strong> (esto se puede hacer en los argumentos de muchas funciones).</p>
@@ -571,7 +571,7 @@ El valor de i es: 5 </code></pre>
 <div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fs)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Con la función <code>dir_ls()</code> obtenemos listados de directorio (similar a <strong>dir()</strong> de la línea de comandos de Windows).</p>
-<p>Si en la carpeta están solos los archivos de datos no hay que aclarar nada más pero si hay otros se puede usar el argumento <em>glob</em> para definir un patrón de búsqueda. Para que esto funcione bien los archivos tienen que tener un mismo formato en su nombre. Por ejemplo, aprovechando el formato de estos archivos vamos a usar el patrón “datos_*“.</p>
+<p>Si en la carpeta están solos los archivos de datos no hay que aclarar nada más pero si hay otros se puede usar el argumento <em>glob</em> para definir un patrón de búsqueda. Para que esto funcione bien los archivos tienen que tener un mismo formato en su nombre. Por ejemplo, aprovechando el formato de estos archivos vamos a usar el patrón “datos/datos_*_vigilancia.csv”.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>archivos <span class="ot">&lt;-</span> <span class="fu">dir_ls</span>(<span class="at">path =</span> <span class="st">"datos"</span>, <span class="at">glob =</span> <span class="st">"datos/datos_*_vigilancia.csv"</span>) </span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>  </span>
@@ -585,7 +585,7 @@ datos/datos_mayo_vigilancia.csv       datos/datos_noviembre_vigilancia.csv
 datos/datos_octubre_vigilancia.csv    datos/datos_septiembre_vigilancia.csv </code></pre>
 </div>
 </div>
-<p>Quedaron almacenados en el vector <strong>archivos</strong> los 12 nombres de los archivos mensuales. Observemos que tienen el formato “datos_mes_vigilancia.csv” y además nos dicen que son de texto plano con separador coma.</p>
+<p>Quedaron almacenados en el vector <strong>archivos</strong> los 12 nombres de los archivos mensuales. Observemos que tienen el formato “datos/datos_mes_vigilancia.csv” y además nos dicen que son de texto plano con separador coma.</p>
 <p>A continuación aplicaremos la función <code>map_df()</code> del paquete purrr junto a la función <code>read_csv()</code> para repetir las lecturas de estos archivos agregando el nombre de cada uno a las observaciones de la tabla final.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> archivos <span class="sc">|&gt;</span> </span>
@@ -613,7 +613,7 @@ datos/datos_octubre_vigilancia.csv    datos/datos_septiembre_vigilancia.csv </co
 </div>
 </div>
 <p>En estos datos de ejemplo ficticios hay 157 observaciones de cada uno de los meses, pero en la realidad estas cantidades seguramente son variantes.</p>
-<p>Para resolver el problema de que nos quede solamente el nombre del mes usaremos la función <code>separate_wider_delim()</code> de <strong>tidyr</strong> indicando que separe el nombre con el delimitador “_” y con el argumento <strong>names</strong> me quede la parte del medio con nombre mes y se deshaga de las constantes “datos” y “vigilancia”.</p>
+<p>Para resolver el problema de que nos quede solamente el nombre del mes usaremos la función <code>separate_wider_delim()</code> de <strong>tidyr</strong> indicando que separe el nombre con el delimitador “_” y con el argumento <strong>names</strong> me quede la parte del medio con nombre mes y se deshaga de las constantes “datos/datos” y “vigilancia”.</p>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>datos <span class="sc">|&gt;</span> </span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">separate_wider_delim</span>(<span class="at">cols =</span> archivo, </span>

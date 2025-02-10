@@ -611,3 +611,4 @@ datos |>
 En el ejemplo anterior aplicamos la función sobre la variable ETNIA y FIS, en el primer caso omite todas las observaciones y en el segundo caso 48 observaciones, mostrando las 152 restantes sin NA en la variable.  
 
 Por último, debemos saber que eliminar observaciones por valores faltantes reduce la potencia de cualquier test de hipotesis o modelo que hagamos porque se reduce el tamaño de la muestra.
+

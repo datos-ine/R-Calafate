@@ -318,14 +318,14 @@ library(fs)
 
 Con la función `dir_ls()` obtenemos listados de directorio (similar a **dir()** de la línea de comandos de Windows). 
 
-Si en la carpeta están solos los archivos de datos no hay que aclarar nada más pero si hay otros se puede usar el argumento *glob* para definir un patrón de búsqueda. Para que esto funcione bien los archivos tienen que tener un mismo formato en su nombre. Por ejemplo, aprovechando el formato de estos archivos vamos a usar el patrón "datos_*". 
+Si en la carpeta están solos los archivos de datos no hay que aclarar nada más pero si hay otros se puede usar el argumento *glob* para definir un patrón de búsqueda. Para que esto funcione bien los archivos tienen que tener un mismo formato en su nombre. Por ejemplo, aprovechando el formato de estos archivos vamos a usar el patrón "datos/datos_*_vigilancia.csv". 
 
 ```{r}
 archivos <- dir_ls(path = "datos", glob = "datos/datos_*_vigilancia.csv") 
   
 archivos
 ```
-Quedaron almacenados en el vector **archivos** los 12 nombres de los archivos mensuales. Observemos que tienen el formato "datos_mes_vigilancia.csv" y además nos dicen que son de texto plano con separador coma.
+Quedaron almacenados en el vector **archivos** los 12 nombres de los archivos mensuales. Observemos que tienen el formato "datos/datos_mes_vigilancia.csv" y además nos dicen que son de texto plano con separador coma.
 
 A continuación aplicaremos la función `map_df()` del paquete purrr junto a la función `read_csv()` para repetir las lecturas de estos archivos agregando el nombre de cada uno a las observaciones de la tabla final.
 
@@ -344,7 +344,7 @@ datos |> count(archivo)
 
 En estos datos de ejemplo ficticios hay 157 observaciones de cada uno de los meses, pero en la realidad estas cantidades seguramente son variantes.
 
-Para resolver el problema de que nos quede solamente el nombre del mes usaremos la función `separate_wider_delim()` de **tidyr** indicando que separe el nombre con el delimitador "_" y con el argumento **names** me quede la parte del medio con nombre mes y se deshaga de las constantes "datos" y "vigilancia".
+Para resolver el problema de que nos quede solamente el nombre del mes usaremos la función `separate_wider_delim()` de **tidyr** indicando que separe el nombre con el delimitador "_" y con el argumento **names** me quede la parte del medio con nombre mes y se deshaga de las constantes "datos/datos" y "vigilancia".
 
 ```{r}
 datos |> 
